@@ -12,7 +12,11 @@
     <?php foreach($food as $row): ?>
     <?php if($row['status'] == "Available"): ?>
     <div class="blood-sample">
+    <?php if(session()->get('success')):?>
     <form method="POST" action="/blood/order" enctype="multipart/form-data">
+    <?php else:?>
+    <form method="POST" action="/blood/view" enctype="multipart/form-data">
+    <?php endif; ?>
         <div class="card" style="width: 18rem;float:left;margin-left:100px;">
             <div class="card-body">
                 <h5 class="card-title">Blood Sample</h5>
